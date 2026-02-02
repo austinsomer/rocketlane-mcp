@@ -118,7 +118,7 @@ body = {
 }
 ```
 
-**Note:** The `move_task_to_phase` tool uses a `/tasks/{id}/move` endpoint that returns 404. Use `update_task` with `phase_id` instead.
+**Note:** The `move_task_to_phase` tool now uses PUT `/tasks/{id}` internally (the original `/tasks/{id}/move` endpoint returned 404).
 
 ## Creating Subtasks
 
@@ -184,3 +184,13 @@ python rocketlane_server.py
 | Fields | get_field, create_field, update_field, list_fields |
 | Spaces | get_space, create_space, update_space, list_spaces, get_space_document |
 | Time | get_time_entry, search_time_entries, create_time_off |
+
+## Troubleshooting
+
+- **Tools not appearing**: Rebuild image with `docker build -t rocketlane-mcp-server .` and restart Claude Code
+- **Authentication errors**: Verify secret with `docker mcp secret list`, ensure ROCKETLANE_API_KEY is set
+- **API errors**: Check error messages - common issues are missing required fields or invalid IDs
+
+## API Reference
+
+- Documentation: https://developer.rocketlane.com/reference
