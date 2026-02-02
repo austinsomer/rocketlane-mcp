@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "rocketlane": {
+      "type": "stdio",
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e", "ROCKETLANE_API_KEY",
+        "rocketlane-mcp-server"
+      ],
+      "env": {
+        "ROCKETLANE_API_KEY": "rl-74ab5119-1bf5-49dc-8c00-527fe540c205"
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:developer.rocketlane.com)",
+      "Bash(docker build:*)",
+      "Bash(docker mcp secret set:*)",
+      "Bash(docker mcp secret:*)",
+      "Bash(if not exist \"C:\\\\Users\\\\Austin\\\\.docker\\\\mcp\\\\catalogs\" mkdir \"C:\\\\Users\\\\Austin\\\\.docker\\\\mcp\\\\catalogs\")",
+      "Bash(findstr:*)",
+      "Bash(docker mcp server:*)",
+      "Bash(docker mcp catalog:*)",
+      "Bash(docker run:*)",
+      "Bash(docker mcp client:*)",
+      "mcp__MCP_DOCKER__mcp-find",
+      "mcp__MCP_DOCKER__mcp-add",
+      "Bash(where claude)",
+      "Bash(dir /s /b \"C:\\\\Users\\\\Austin\\\\.claude\\\\*.json\")",
+      "Bash(docker images:*)",
+      "Bash(docker mcp --help:*)",
+      "Bash(docker mcp config --help:*)",
+      "Bash(docker mcp config:*)",
+      "mcp__rocketlane__list_projects",
+      "Bash(curl:*)",
+      "Bash(docker ps:*)",
+      "Bash(docker mcp gateway --help:*)",
+      "Bash(python -c \"\nimport asyncio\nimport httpx\n\nAPI_KEY = ''rl-74ab5119-1bf5-49dc-8c00-527fe540c205''\nBASE_URL = ''https://api.rocketlane.com/api/1.0''\n\nasync def test\\(\\):\n    params = {''pageSize'': 5}\n    headers = {''accept'': ''application/json'', ''api-key'': API_KEY}\n    async with httpx.AsyncClient\\(\\) as client:\n        response = await client.get\\(f''{BASE_URL}/projects'', headers=headers, params=params, timeout=30\\)\n        data = response.json\\(\\)\n        print\\(''Keys in response:'', list\\(data.keys\\(\\)\\) if isinstance\\(data, dict\\) else ''not a dict''\\)\n        projects = data.get\\(''data'', data.get\\(''results'', data\\)\\) if isinstance\\(data, dict\\) else data\n        print\\(f''Found {len\\(projects\\)} projects''\\)\n        for p in projects[:2]:\n            print\\(f''  Project type: {type\\(p\\)}, keys: {list\\(p.keys\\(\\)\\) if isinstance\\(p, dict\\) else \"\"not dict\"\"}''\\)\n\nasyncio.run\\(test\\(\\)\\)\n\")",
+      "mcp__MCP_DOCKER__mcp-exec",
+      "mcp__rocketlane__archive_project",
+      "mcp__rocketlane__create_project",
+      "mcp__rocketlane__list_users",
+      "mcp__rocketlane__create_phase",
+      "mcp__rocketlane__create_task",
+      "mcp__rocketlane__get_project",
+      "mcp__rocketlane__list_tasks",
+      "WebSearch",
+      "mcp__rocketlane__list_phases",
+      "mcp__rocketlane__move_task_to_phase",
+      "mcp__rocketlane__update_task",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "rocketlane"
+  ]
+}
